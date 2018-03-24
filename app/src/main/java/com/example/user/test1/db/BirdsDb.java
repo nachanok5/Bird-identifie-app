@@ -21,6 +21,7 @@ public class BirdsDb extends SQLiteOpenHelper {
     public static final String COL_SIZE="size";
     public static final String COL_PLACE_1="place1";
     public static final String COL_PLACE_2="place2";
+    public static final String COL_FEATURE="feature";
 
     private static final String SQL_CREATE_TABLE= "CREATE TABLE " +TABLE_NAME + "("
             + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -29,7 +30,8 @@ public class BirdsDb extends SQLiteOpenHelper {
             + COL_COLOUR_2 + " TEXT,"
             + COL_SIZE + " TEXT,"
             + COL_PLACE_1 + " TEXT,"
-            + COL_PLACE_2 + " TEXT"
+            + COL_PLACE_2 + " TEXT,"
+            + COL_FEATURE + " TEXT"
             +")";
 
     public BirdsDb(Context context) {
