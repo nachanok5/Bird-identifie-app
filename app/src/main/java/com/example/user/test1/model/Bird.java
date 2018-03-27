@@ -14,8 +14,9 @@ public class Bird {
     public final String place1;
     public final String place2;
     public final String feature;
+    public final String picture;
 
-    public Bird(long id, String name, String colour1, String colour2, String size, String place1, String place2, String feature) {
+    public Bird(long id, String name, String colour1, String colour2, String size, String place1, String place2, String feature, String picture, String s) {
         this.id = id;
         this.name = name;
         this.colour1 = colour1;
@@ -24,6 +25,7 @@ public class Bird {
         this.place1 = place1;
         this.place2 = place2;
         this.feature = feature;
+        this.picture = picture;
     }
 
     @Override

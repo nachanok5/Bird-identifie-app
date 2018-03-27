@@ -55,6 +55,12 @@ public class FormActivity extends AppCompatActivity {
                 RadioButton selectedPlaceRb = findViewById(id);
                 String selectedPlace = selectedPlaceRb.getText().toString();
 
+                RadioGroup featureRg = findViewById(R.id.feature_rg);
+                id = featureRg.getCheckedRadioButtonId();
+                RadioButton selectedfeatureRb = findViewById(id);
+                String selectedfeature = selectedfeatureRb.getText().toString();
+
+
                 ArrayList<String> colourlist = new ArrayList<>();
 
                 CheckBox greenCb = findViewById(R.id.cb_green);
@@ -91,33 +97,14 @@ public class FormActivity extends AppCompatActivity {
                     colourlist.add("orange");
                 }
 
-                ArrayList<String> featureList = new ArrayList<>();
-                CheckBox onTreeCb = findViewById(R.id.cb_on_tree);
-                CheckBox onGroundCb = findViewById(R.id.cb_on_ground);
-                CheckBox onFlyCb = findViewById(R.id.cb_on_fly);
-                CheckBox onWaterCb = findViewById(R.id.cb_on_water);
-
-                if (onTreeCb.isChecked()) {
-                    featureList.add("on_tree");
-                }
-                if (onGroundCb.isChecked()) {
-                    featureList.add("on_ground");
-                }
-                if (onWaterCb.isChecked()) {
-                    featureList.add("on_water");
-                }
-                if (onFlyCb.isChecked()) {
-                    featureList.add("on_fly");
-                }
-
                 BirdsDb birdsDb = new BirdsDb(FormActivity.this);
                 SQLiteDatabase db = birdsDb.getWritableDatabase();
 
                 Cursor cursor = db.query(
                         BirdsDb.TABLE_NAME,
                         null,
-                        BirdsDb.COL_SIZE + "=?",
-                        new String[]{selectedSize},
+                        "size=?,(feature1=? OR feature2=?)  AND (place1=? OR place2=?)",
+                        new String[]{selectedSize, selectedPlace, selectedPlace,selectedfeature,selectedfeature},
                         null,
                         null,
                         null
@@ -135,7 +122,9 @@ public class FormActivity extends AppCompatActivity {
                     String colour2 = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_COLOUR_2));
                     String place1 = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_PLACE_1));
                     String place2 = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_PLACE_2));
-                    String feature = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_FEATURE));
+                    String feature1 = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_FEATURE_1));
+                    String feature2 = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_FEATURE_2));
+                    String picture = cursor.getString( cursor.getColumnIndex(BirdsDb.COL_PICTURE));
 
                     Bird b= new Bird(
                             birdId,
@@ -145,7 +134,9 @@ public class FormActivity extends AppCompatActivity {
                             size,
                             place1,
                             place2,
-                            feature
+                            feature1,
+                            feature2,
+                            picture
                     );
 
                     birdsList.add(b);
@@ -153,7 +144,6 @@ public class FormActivity extends AppCompatActivity {
 
                 Intent i = new Intent(getApplicationContext(), BirdListActivity.class);
                 startActivity(i);
-
             }
         });
     }

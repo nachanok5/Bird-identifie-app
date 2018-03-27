@@ -1,9 +1,11 @@
 package com.example.user.test1;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
+import com.example.user.test1.adapter.BirdListAdapter;
+
 import static com.example.user.test1.FormActivity.birdsList;
 
 public class BirdListActivity extends AppCompatActivity {
@@ -15,11 +17,17 @@ public class BirdListActivity extends AppCompatActivity {
 
         ListView birdsListBView = findViewById(R.id.birds_list_view);
 
-        ArrayAdapter adapter = new ArrayAdapter<>(
+        //ArrayAdapter adapter = new ArrayAdapter<>(
+           //     this,
+            //    android.R.layout.simple_list_item_1,
+            //    birdsList
+       // );
+        BirdListAdapter adapter = new BirdListAdapter(
                 this,
-                android.R.layout.simple_list_item_1,
+                R.layout.item,
                 birdsList
         );
+
         birdsListBView.setAdapter(adapter);
     }
 }

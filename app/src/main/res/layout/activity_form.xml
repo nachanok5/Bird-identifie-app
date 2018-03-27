@@ -2,9 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.user.test1.FormActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"   >
+    android:layout_height="match_parent"
+    tools:context="com.example.user.test1.FormActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="10-20cm" />
+                android:text="11-20cm" />
 
             <RadioButton
                 android:id="@+id/rbz_2"
@@ -212,6 +212,7 @@
                 android:layout_weight="1"
                 android:text="black" />
 
+
             <CheckBox
                 android:id="@+id/cb_yellow"
                 android:layout_width="wrap_content"
@@ -232,6 +233,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="orange" />
+
+            <CheckBox
+                android:id="@+id/cb_grey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="grey" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -245,7 +254,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feature_ly">
+            app:layout_constraintTop_toBottomOf="@+id/feature_rg">
 
             <Button
                 android:id="@+id/back_button"
@@ -279,20 +288,7 @@
             app:layout_constraintTop_toBottomOf="@+id/place_rg" />
 
         <RadioGroup
-            android:id="@+id/time_rg"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-
-        <LinearLayout
-            android:id="@+id/feature_ly"
+            android:id="@+id/feature_rg"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
@@ -304,38 +300,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_birdfeature">
 
-            <CheckBox
-                android:id="@+id/cb_on_tree"
+            <RadioButton
+                android:id="@+id/rb_on_tree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="on tree" />
 
-            <CheckBox
-                android:id="@+id/cb_on_ground"
+            <RadioButton
+                android:id="@+id/rb_on_ground"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="on ground" />
 
-            <CheckBox
-                android:id="@+id/cb_on_fly"
+            <RadioButton
+                android:id="@+id/rb_on_fly"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="on fly" />
 
-            <CheckBox
-                android:id="@+id/cb_on_water"
+            <RadioButton
+                android:id="@+id/rb_on_water"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="on water" />
 
-        </LinearLayout>
+        </RadioGroup>
     </android.support.constraint.ConstraintLayout>
 
-       </ScrollView>
+</ScrollView>
 
 
 

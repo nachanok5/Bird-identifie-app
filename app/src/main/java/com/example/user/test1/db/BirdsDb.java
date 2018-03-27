@@ -21,7 +21,9 @@ public class BirdsDb extends SQLiteOpenHelper {
     public static final String COL_SIZE="size";
     public static final String COL_PLACE_1="place1";
     public static final String COL_PLACE_2="place2";
-    public static final String COL_FEATURE="feature";
+    public static final String COL_FEATURE_1="feature1";
+    public static final String COL_FEATURE_2="feature2";
+    public static final String COL_PICTURE="picture";
 
     private static final String SQL_CREATE_TABLE= "CREATE TABLE " +TABLE_NAME + "("
             + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -31,7 +33,9 @@ public class BirdsDb extends SQLiteOpenHelper {
             + COL_SIZE + " TEXT,"
             + COL_PLACE_1 + " TEXT,"
             + COL_PLACE_2 + " TEXT,"
-            + COL_FEATURE + " TEXT"
+            + COL_FEATURE_1 + " TEXT,"
+            + COL_FEATURE_2 + " TEXT,"
+            + COL_PICTURE + " TEXT"
             +")";
 
     public BirdsDb(Context context) {
@@ -53,6 +57,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
          cv = new ContentValues();
@@ -62,6 +69,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on ground ");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "นกเขาชวา.JPG");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -71,6 +81,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "นกระจอกบ้าน.JPG");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -80,6 +93,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "");
+        cv.put(COL_PICTURE, "นกตีทอง(2).JPG");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -89,6 +105,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "นกตะขาบทุ่ง.jpg");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -98,6 +117,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "นกกระเต็นน้อยธรรมดา.JPG");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -107,15 +129,21 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
-        cv.put(COL_BIRD_NAME, "นกกะเต็นอกดำ");
+        cv.put(COL_BIRD_NAME, "นกกะเต็นหัวดำ");
         cv.put(COL_COLOUR_1, "blue");
         cv.put(COL_COLOUR_2, "black");
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "นกระเต็นหัวดำ.jpg");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -125,6 +153,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "นกจาบคาหัวเีขยว.JPG");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -134,6 +165,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -143,6 +177,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "51-60cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -152,6 +189,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "51-60cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -161,6 +201,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -170,6 +213,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -179,6 +225,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -188,6 +237,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -197,6 +249,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -206,6 +261,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -215,6 +273,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -224,6 +285,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "city");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -233,6 +297,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -242,6 +309,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on water");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -251,6 +321,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on water");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -260,6 +333,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
 
@@ -270,6 +346,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -279,6 +358,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "31-40cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -288,6 +370,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "51-60cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -297,6 +382,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "51-60cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -306,6 +394,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "91-100cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -315,6 +406,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "61-70cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "นกยางโทนน้อย.jpg");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -324,6 +418,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -333,6 +430,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -342,6 +442,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -351,6 +454,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on ground");
+        cv.put(COL_FEATURE_2, "on water");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -360,6 +466,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "71-80cm");
         cv.put(COL_PLACE_1, "field");
         cv.put(COL_PLACE_2, "wetland");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -369,6 +478,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "field");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -378,6 +490,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "41-50cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -387,6 +502,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -396,6 +514,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -405,6 +526,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -414,6 +538,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -423,6 +550,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -432,6 +562,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -441,6 +574,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "8-10cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -450,6 +586,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "8-10cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -459,6 +598,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -468,6 +610,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "wetland");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -477,6 +622,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -486,6 +634,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -495,15 +646,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "21-30cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
-        sqLiteDatabase.insert(TABLE_NAME,null, cv);
-
-        cv = new ContentValues();
-        cv.put(COL_BIRD_NAME, "นกปรอดหัวสีเขม่า");
-        cv.put(COL_COLOUR_1, "brown");
-        cv.put(COL_COLOUR_2, "red");
-        cv.put(COL_SIZE, "11-20cm");
-        cv.put(COL_PLACE_1, "garden");
-        cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -513,6 +658,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -522,6 +670,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on tree");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -531,6 +682,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "8-10cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -540,6 +694,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "8-10cm");
         cv.put(COL_PLACE_1, "garden");
         cv.put(COL_PLACE_2, "");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on fly");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -549,6 +706,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -558,6 +718,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "field");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -567,6 +730,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on fly");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
         cv = new ContentValues();
@@ -576,6 +742,9 @@ public class BirdsDb extends SQLiteOpenHelper {
         cv.put(COL_SIZE, "11-20cm");
         cv.put(COL_PLACE_1, "city");
         cv.put(COL_PLACE_2, "garden");
+        cv.put(COL_FEATURE_1, "on tree");
+        cv.put(COL_FEATURE_2, "on ground");
+        cv.put(COL_PICTURE, "นกกระจอกชวา.jpg");
         sqLiteDatabase.insert(TABLE_NAME,null, cv);
 
     }

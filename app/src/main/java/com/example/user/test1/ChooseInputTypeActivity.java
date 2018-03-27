@@ -14,11 +14,12 @@ public class ChooseInputTypeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose_input_type);
 
         Button formButton = findViewById(R.id.form_input_button);
+        Button imageButton = findViewById(R.id.image_button);
+
 
         formButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), FormActivity.class);
                 startActivity(i);
             }
