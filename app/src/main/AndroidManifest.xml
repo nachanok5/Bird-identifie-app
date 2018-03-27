@@ -19,7 +19,7 @@
         <activity android:name=".ChooseInputTypeActivity" />
         <activity android:name=".FormActivity" />
         <activity android:name=".BirdListActivity" />
-        <activity android:name=".comingsoonActivity"></activity>
+        <activity android:name=".FormActivity$comingsoonActivity"></activity>
     </application>
 
 </manifest>

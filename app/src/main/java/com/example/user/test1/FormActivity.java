@@ -103,8 +103,8 @@ public class FormActivity extends AppCompatActivity {
                 Cursor cursor = db.query(
                         BirdsDb.TABLE_NAME,
                         null,
-                        "size=?,(feature1=? OR feature2=?)  AND (place1=? OR place2=?)",
-                        new String[]{selectedSize, selectedPlace, selectedPlace,selectedfeature,selectedfeature},
+                        "size=? AND (feature1=? OR feature2=?)  AND (place1=? OR place2=?)",
+                        new String[]{selectedSize, selectedPlace, selectedPlace, selectedfeature, selectedfeature},
                         null,
                         null,
                         null
@@ -146,5 +146,14 @@ public class FormActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    public static class comingsoonActivity extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_comingsoon);
+        }
     }
 }
